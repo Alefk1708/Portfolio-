@@ -29,8 +29,8 @@ export default function Navbar({ changeNavBar, setChangeNavBar }) {
             >
               <button onClick={() => setChangeNavBar("home")}>
                 <Image
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                   src="/assets/casa.png"
                   alt="Logo"
                 />
