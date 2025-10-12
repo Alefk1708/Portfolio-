@@ -1,3 +1,4 @@
+''
 import { useState } from "react";
 import { Menu, X } from "lucide-react"; // ícones minimalistas
 import AnimatedContent from "../animations/AnimatedContent";
