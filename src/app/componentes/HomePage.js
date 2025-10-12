@@ -110,7 +110,7 @@ function HomePage() {
         >
           <div className="text-[2rem] text-white rounded-3xl px-4 border-2 border-[#9f0000]">
             <a
-              href="https://drive.google.com/file/d/1yvJfeDeKH6rYdjQq9NYFgIay51NNqtGq/view?usp=sharing"
+              href="https://drive.google.com/file/d/1GiHarfsRBOJMwWsKcERJza5hDIK6eqTB/view?usp=sharing"
               target="_blank"
             >
               BAIXAR CV
@@ -154,7 +154,7 @@ function HomePage() {
               <Typewriter
                 options={{
                   strings: [
-                    '<span class="text-white text-[1.7rem] flex flex-wrap gap-3 ">Sou <span class="text-[#9f0000] text-[1.7rem]">Desenvolvedor Fullstack</span></span>.',
+                    '<span class="text-white text-[1.7rem] flex flex-wrap gap-3 ">Sou <span class="text-[#9f0000] text-[1.7rem]">Desenvolvedor Fullstack.</span></span>',
                   ],
                   autoStart: true,
                   loop: true,
@@ -203,7 +203,7 @@ function HomePage() {
           >
             <div className=" w-[42%] text-[1.3rem] text-center mt-4 text-white rounded-3xl px-4 border-2 border-[#9f0000]">
               <a
-                href="https://drive.google.com/file/d/1yvJfeDeKH6rYdjQq9NYFgIay51NNqtGq/view?usp=sharing"
+                href="https://drive.google.com/file/d/1GiHarfsRBOJMwWsKcERJza5hDIK6eqTB/view?usp=sharing"
                 target="_blank"
               >
                 BAIXAR CV

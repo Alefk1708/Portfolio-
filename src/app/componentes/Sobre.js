@@ -1,6 +1,5 @@
 import AnimatedContent from "../animations/AnimatedContent";
 
-
 function Sobre() {
   return (
     <div className=" w-screen h-screen flex justify-center items-center">
@@ -47,33 +46,37 @@ function Sobre() {
               <div className="space-y-5">
                 <p className="text-white text-[1rem]">
                   Sou Kaique Alef Mendes Cardoso, Desenvolvedor Full-Stack
-                  Júnior com forte paixão por tecnologia, aprendizado contínuo e
-                  construção de soluções inteligentes. Natural de Brasília de
-                  Minas/MG, iniciei minha jornada no desenvolvimento com foco
-                  tanto em front-end quanto em back-end, sempre buscando unir
-                  estética, performance e funcionalidade em cada projeto.
+                  Júnior com foco em React, Node.js e MongoDB. Tenho 20 anos e
+                  sou de Goiânia, Goiás. Sou movido pela curiosidade e
+                  pela vontade de aprender sempre, buscando evoluir em cada
+                  projeto com soluções criativas, eficientes e bem estruturadas.
                 </p>
 
                 <p className="text-white text-[1rem]">
-                  Meu background inclui sólida experiência com HTML5, CSS3,
-                  JavaScript, Node.js, Python e bancos de dados NoSQL.
-                  Recentemente, desenvolvi um sistema completo de convite de
-                  casamento, integrando front-end, back-end e banco de dados com
-                  tecnologias modernas como Node.js, MongoDB Atlas e APIs
-                  hospedadas no Heroku — um projeto independente que evidencia
-                  minha capacidade de transformar ideias em produtos funcionais.
+                  Tenho experiência prática no desenvolvimento de aplicações web
+                  completas, incluindo front-end, back-end e banco de dados.
+                  Entre meus projetos, destaco o sistema de ponto com QR Code —
+                  desenvolvido com React, integração a API REST, autenticação
+                  segura e armazenamento em MongoDB — e um site de convite de
+                  casamento digital, com formulário conectado a banco de dados e
+                  painel de visualização em tempo real.
                 </p>
+
                 <p className="text-white text-[1rem]">
-                  Tenho formação técnica complementar pelo IFRS, onde aprofundei
-                  conhecimentos em JavaScript, HTML5 e CSS3, e sigo ampliando
-                  minhas habilidades com frameworks como React e Tailwind CSS.
-                  Valorizo boas práticas de código, clareza na comunicação e a
-                  capacidade de aprender rapidamente em ambientes dinâmicos.
+                  Minha base técnica inclui HTML5, CSS3, JavaScript, TypeScript,
+                  React.js, Node.js, Express.js, Tailwind CSS, MongoDB e GitHub.
+                  Também possuo certificações pelo IFRS nas áreas de
+                  desenvolvimento web e metodologia ágil (Scrum), o que me ajuda
+                  a manter organização e colaboração eficaz em equipe.
                 </p>
+
                 <p className="text-white text-[1rem]">
-                  Estou em constante evolução, sempre aberto a novos desafios e
-                  oportunidades que me permitam contribuir, crescer e impactar
-                  positivamente o ecossistema de desenvolvimento web.
+                  Sou uma pessoa adaptável, comunicativa e focada em resultados.
+                  Tenho facilidade em aprender novas tecnologias e gosto de
+                  enfrentar desafios que me tirem da zona de conforto. Estou em
+                  busca de oportunidades para crescer profissionalmente e
+                  contribuir com soluções reais e impactantes no desenvolvimento
+                  web.
                 </p>
               </div>
             </AnimatedContent>
@@ -83,65 +86,69 @@ function Sobre() {
 
       <div className="lg:hidden flex flex-col gap-4 bg-[#ffffff13] p-6 rounded-4xl scroll-mb-6 overflow-y-auto w-[93%] h-[80%] mt-17 ">
         <AnimatedContent
-              distance={50}
-              direction="vertical"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={0.6}
-            >
-              <div>
-                <h1 className="text-white text-3xl">SOBRE MIM</h1>
-              </div>
-            </AnimatedContent>
+          distance={50}
+          direction="vertical"
+          reverse={true}
+          duration={1.2}
+          initialOpacity={0}
+          animateOpacity={true}
+          scale={1}
+          threshold={0.2}
+          delay={0.6}
+        >
+          <div>
+            <h1 className="text-white text-3xl">SOBRE MIM</h1>
+          </div>
+        </AnimatedContent>
 
-            <AnimatedContent
-              distance={50}
-              direction="horizontal"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={1}
-            >
-              <div className="space-y-5">
-                <p className="text-white text-[1rem]">
+        <AnimatedContent
+          distance={50}
+          direction="horizontal"
+          reverse={true}
+          duration={1.2}
+          initialOpacity={0}
+          animateOpacity={true}
+          scale={1}
+          threshold={0.2}
+          delay={1}
+        >
+          <div className="space-y-5">
+            <p className="text-white text-[1rem]">
                   Sou Kaique Alef Mendes Cardoso, Desenvolvedor Full-Stack
-                  Júnior com forte paixão por tecnologia, aprendizado contínuo e
-                  construção de soluções inteligentes. Natural de Brasília de
-                  Minas/MG, iniciei minha jornada no desenvolvimento com foco
-                  tanto em front-end quanto em back-end, sempre buscando unir
-                  estética, performance e funcionalidade em cada projeto.
+                  Júnior com foco em React, Node.js e MongoDB. Tenho 20 anos e
+                  sou de Goiânia, Goiás. Sou movido pela curiosidade e
+                  pela vontade de aprender sempre, buscando evoluir em cada
+                  projeto com soluções criativas, eficientes e bem estruturadas.
                 </p>
 
                 <p className="text-white text-[1rem]">
-                  Meu background inclui sólida experiência com HTML5, CSS3,
-                  JavaScript, Node.js, Python e bancos de dados NoSQL.
-                  Recentemente, desenvolvi um sistema completo de convite de
-                  casamento, integrando front-end, back-end e banco de dados com
-                  tecnologias modernas como Node.js, MongoDB Atlas e APIs
-                  hospedadas no Heroku — um projeto independente que evidencia
-                  minha capacidade de transformar ideias em produtos funcionais.
+                  Tenho experiência prática no desenvolvimento de aplicações web
+                  completas, incluindo front-end, back-end e banco de dados.
+                  Entre meus projetos, destaco o sistema de ponto com QR Code —
+                  desenvolvido com React, integração a API REST, autenticação
+                  segura e armazenamento em MongoDB — e um site de convite de
+                  casamento digital, com formulário conectado a banco de dados e
+                  painel de visualização em tempo real.
                 </p>
+
                 <p className="text-white text-[1rem]">
-                  Tenho formação técnica complementar pelo IFRS, onde aprofundei
-                  conhecimentos em JavaScript, HTML5 e CSS3, e sigo ampliando
-                  minhas habilidades com frameworks como React e Tailwind CSS.
-                  Valorizo boas práticas de código, clareza na comunicação e a
-                  capacidade de aprender rapidamente em ambientes dinâmicos.
+                  Minha base técnica inclui HTML5, CSS3, JavaScript, TypeScript,
+                  React.js, Node.js, Express.js, Tailwind CSS, MongoDB e GitHub.
+                  Também possuo certificações pelo IFRS nas áreas de
+                  desenvolvimento web e metodologia ágil (Scrum), o que me ajuda
+                  a manter organização e colaboração eficaz em equipe.
                 </p>
+
                 <p className="text-white text-[1rem]">
-                  Estou em constante evolução, sempre aberto a novos desafios e
-                  oportunidades que me permitam contribuir, crescer e impactar
-                  positivamente o ecossistema de desenvolvimento web.
+                  Sou uma pessoa adaptável, comunicativa e focada em resultados.
+                  Tenho facilidade em aprender novas tecnologias e gosto de
+                  enfrentar desafios que me tirem da zona de conforto. Estou em
+                  busca de oportunidades para crescer profissionalmente e
+                  contribuir com soluções reais e impactantes no desenvolvimento
+                  web.
                 </p>
-              </div>
-            </AnimatedContent>
+          </div>
+        </AnimatedContent>
       </div>
     </div>
   );
