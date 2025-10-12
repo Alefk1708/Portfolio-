@@ -3,14 +3,66 @@ import { motion, useMotionValue, motionValue } from "framer-motion";
 import Image from "next/image";
 
 const DEFAULT_ITEMS = [
-  { title: "Gerenciador de tarefas", id: 1, href: "#", img: "/assets/Gerenciador-Tarefas.png" },
-  { title: "Gerador de cores hexadecimal", id: 2, href: "#", img: "/assets/Gerador-Cores.png" },
-  { title: "Quiz interativo em react", id: 3, href: "#", img: "/assets/Quiz-react.png" },
-  { title: "Site de convite de casamento", id: 4, href: "#", img: "/assets/Convite.png" },
-  { title: "Calculadora web responsiva", id: 5, href: "#", img: "/assets/calculadora-web.png" },
-  { title: "Conversor de binario para decimal", id: 6, href: "#", img: "/assets/bin2dec.png" },
-  { title: "Visualizador de borda css", id: 7, href: "#", img: "/assets/bordaCss.png" },
-  { title: "Luzes de natal", id: 8, href: "#", img: "/assets/luzesdeNatal.png" },
+  {
+    title: "WePet",
+    id: 1,
+    href: "https://wepet-adocao.netlify.app/",
+    img: "/assets/we-pet.png",
+  },
+  {
+    title: "VelocExpress",
+    id: 2,
+    href: "https://velocexpress.netlify.app/",
+    img: "/assets/VelocExpress.png",
+  },
+  {
+    title: "Burger Prime",
+    id: 3,
+    href: "https://burger-prime.netlify.app/",
+    img: "/assets/BurgerPrime.png",
+  },
+  {
+    title: "Site de convite de casamento",
+    id: 4,
+    href: "https://convite-de-casamento-site.netlify.app",
+    img: "/assets/Convite.png",
+  },
+  {
+    title: "Calculadora web responsiva",
+    id: 5,
+    href: "https://calculadora-web-responsiva.netlify.app",
+    img: "/assets/calculadora-web.png",
+  },
+  {
+    title: "Conversor de binario para decimal",
+    id: 6,
+    href: "https://bin-dec-converter.netlify.app",
+    img: "/assets/bin2dec.png",
+  },
+  {
+    title: "Visualizador de borda css",
+    id: 7,
+    href: "https://visualizador-de-borda.netlify.app",
+    img: "/assets/bordaCss.png",
+  },
+  {
+    title: "Luzes de natal",
+    id: 8,
+    href: "https://luzes-natal.netlify.app",
+    img: "/assets/luzesdeNatal.png",
+  },
+  {
+    title: "Gerenciador de tarefas",
+    id: 9,
+    href: "https://gerenciadordetarefas17.netlify.app",
+    img: "/assets/Gerenciador-Tarefas.png",
+  },
+  {
+    title: "Gerador de cores hexadecimal",
+    id: 10,
+    href: "https://geradordecoreshexadecimal.netlify.app",
+    img: "/assets/Gerador-Cores.png",
+  },
 ];
 
 const DRAG_BUFFER = 0;
@@ -132,7 +184,9 @@ export default function Carousel({
   // ---------- CRIA/REUSA MotionValues derivados e assina x.onChange ----------
   useEffect(() => {
     // garantir que existam MotionValues suficientes (reusar se já existirem)
-    rotateYsRef.current = carouselItems.map((_, i) => rotateYsRef.current[i] ?? motionValue(0));
+    rotateYsRef.current = carouselItems.map(
+      (_, i) => rotateYsRef.current[i] ?? motionValue(0)
+    );
 
     // limpeza de subscription antiga (se existir)
     if (subscriptionRef.current) {
@@ -171,7 +225,9 @@ export default function Carousel({
     <div
       ref={containerRef}
       className={`relative overflow-hidden p-4 ${
-        round ? "rounded-full border border-white" : "rounded-[24px] border border-[#222]"
+        round
+          ? "rounded-full border border-white"
+          : "rounded-[24px] border border-[#222]"
       }`}
       style={{
         width: `${baseWidth}px`,
@@ -186,7 +242,9 @@ export default function Carousel({
           width: itemWidth,
           gap: `${GAP}px`,
           perspective: 1000,
-          perspectiveOrigin: `${currentIndex * trackItemOffset + itemWidth / 2}px 50%`,
+          perspectiveOrigin: `${
+            currentIndex * trackItemOffset + itemWidth / 2
+          }px 50%`,
           x,
         }}
         onDragEnd={handleDragEnd}
@@ -214,25 +272,45 @@ export default function Carousel({
             transition={effectiveTransition}
           >
             <div className={`${round ? "p-0 m-0" : "mb-4 p-5"}`}>
-              <Image width={itemWidth} height={itemWidth} className="rounded-3xl" src={`${item.img}`} alt="Imagem dos slides" />
+              <Image
+                width={itemWidth}
+                height={itemWidth}
+                className="rounded-3xl"
+                src={`${item.img}`}
+                alt="Imagem dos slides"
+              />
             </div>
             <div className="p-5">
-              <div className="mb-1 font-black text-lg text-white">{item.title}</div>
+              <div className="mb-1 font-black text-lg text-white">
+                {item.title}
+              </div>
               <p className="text-sm text-white">{item.description}</p>
             </div>
           </motion.a>
         ))}
       </motion.div>
 
-      <div className={`flex w-full justify-center ${round ? "absolute z-20 bottom-12 left-1/2 -translate-x-1/2" : ""}`}>
+      <div
+        className={`flex w-full justify-center ${
+          round ? "absolute z-20 bottom-12 left-1/2 -translate-x-1/2" : ""
+        }`}
+      >
         <div className="mt-4 flex w-[150px] justify-between px-8">
           {items.map((_, index) => (
             <motion.div
               key={index}
               className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
-                currentIndex % items.length === index ? (round ? "bg-white" : "bg-[#333333]") : (round ? "bg-[#555]" : "bg-[rgba(51,51,51,0.4)]")
+                currentIndex % items.length === index
+                  ? round
+                    ? "bg-white"
+                    : "bg-[#333333]"
+                  : round
+                  ? "bg-[#555]"
+                  : "bg-[rgba(51,51,51,0.4)]"
               }`}
-              animate={{ scale: currentIndex % items.length === index ? 1.2 : 1 }}
+              animate={{
+                scale: currentIndex % items.length === index ? 1.2 : 1,
+              }}
               onClick={() => setCurrentIndex(index)}
               transition={{ duration: 0.15 }}
             />
