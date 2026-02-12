@@ -63,6 +63,12 @@ const DEFAULT_ITEMS = [
     href: "https://geradordecoreshexadecimal.netlify.app",
     img: "/assets/Gerador-Cores.png",
   },
+  {
+    title: "Gerenciamento de projetos e tarefas",
+    id: 11,
+    href: "https://taskflow1708.netlify.app/login",
+    img: "/assets/TaskFlow.png",
+  },
 ];
 
 const DRAG_BUFFER = 0;

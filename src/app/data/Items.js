@@ -59,6 +59,12 @@ const Items = [
     url: "https://geradordecoreshexadecimal.netlify.app",
     id: 10,
   },
+  {
+    img: "/assets/TaskFlow.png",
+    title: "Gerenciamento de projetos e tarefas",
+    url: "https://taskflow1708.netlify.app/login",
+    id: 11,
+  },
 ];
 
 export default Items;
