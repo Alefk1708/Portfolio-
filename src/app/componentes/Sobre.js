@@ -45,38 +45,35 @@ function Sobre() {
             >
               <div className="space-y-5">
                 <p className="text-white text-[1rem]">
-                  Sou Kaique Alef Mendes Cardoso, Desenvolvedor Full-Stack
-                  Júnior com foco em React, Node.js e MongoDB. Tenho 20 anos e
-                  sou de Goiânia, Goiás. Sou movido pela curiosidade e
-                  pela vontade de aprender sempre, buscando evoluir em cada
-                  projeto com soluções criativas, eficientes e bem estruturadas.
+                  Olá! Sou Kaique Alef, um Desenvolvedor Full Stack de 20 anos,
+                  apaixonado por transformar ideias em código. Com base em
+                  Goiânia, atuo no desenvolvimento de aplicações Web e Mobile,
+                  sempre buscando unir interfaces intuitivas a um back-end
+                  robusto e eficiente.
                 </p>
 
                 <p className="text-white text-[1rem]">
-                  Tenho experiência prática no desenvolvimento de aplicações web
-                  completas, incluindo front-end, back-end e banco de dados.
-                  Entre meus projetos, destaco o sistema de ponto com QR Code —
-                  desenvolvido com React, integração a API REST, autenticação
-                  segura e armazenamento em MongoDB — e um site de convite de
-                  casamento digital, com formulário conectado a banco de dados e
-                  painel de visualização em tempo real.
+                  Minha trajetória prática inclui a entrega de soluções reais,
+                  como uma plataforma completa para gestão de casamentos e um
+                  sistema de ponto eletrônico seguro com leitura de QR Code.
+                  Esses projetos solidificaram minha experiência com React.js,
+                  criação de APIs RESTful e integração com bancos de dados SQL e
+                  NoSQL.
                 </p>
 
                 <p className="text-white text-[1rem]">
-                  Minha base técnica inclui HTML5, CSS3, JavaScript, TypeScript,
-                  React.js, Node.js, Express.js, Tailwind CSS, MongoDB e GitHub.
-                  Também possuo certificações pelo IFRS nas áreas de
-                  desenvolvimento web e metodologia ágil (Scrum), o que me ajuda
-                  a manter organização e colaboração eficaz em equipe.
+                  Além do domínio do ecossistema JavaScript (incluindo
+                  TypeScript, Next.js e Vue.js), expando minhas capacidades
+                  técnicas com Python (FastAPI) e desenvolvimento móvel usando
+                  React Native. Minha formação é complementada por certificações
+                  do IFRS e conhecimento em metodologias ágeis como Scrum.
                 </p>
 
                 <p className="text-white text-[1rem]">
-                  Sou uma pessoa adaptável, comunicativa e focada em resultados.
-                  Tenho facilidade em aprender novas tecnologias e gosto de
-                  enfrentar desafios que me tirem da zona de conforto. Estou em
-                  busca de oportunidades para crescer profissionalmente e
-                  contribuir com soluções reais e impactantes no desenvolvimento
-                  web.
+                  Mais do que código, valorizo a comunicação clara e o trabalho
+                  em equipe. Sou movido pela curiosidade e pela vontade de
+                  resolver problemas complexos, buscando sempre oportunidades
+                  onde possa colaborar, aprender e crescer profissionalmente.
                 </p>
               </div>
             </AnimatedContent>
@@ -114,39 +111,35 @@ function Sobre() {
         >
           <div className="space-y-5">
             <p className="text-white text-[1rem]">
-                  Sou Kaique Alef Mendes Cardoso, Desenvolvedor Full-Stack
-                  Júnior com foco em React, Node.js e MongoDB. Tenho 20 anos e
-                  sou de Goiânia, Goiás. Sou movido pela curiosidade e
-                  pela vontade de aprender sempre, buscando evoluir em cada
-                  projeto com soluções criativas, eficientes e bem estruturadas.
-                </p>
+              Olá! Sou Kaique Alef, um Desenvolvedor Full Stack de 20 anos,
+              apaixonado por transformar ideias em código. Com base em Goiânia,
+              atuo no desenvolvimento de aplicações Web e Mobile, sempre
+              buscando unir interfaces intuitivas a um back-end robusto e
+              eficiente.
+            </p>
 
-                <p className="text-white text-[1rem]">
-                  Tenho experiência prática no desenvolvimento de aplicações web
-                  completas, incluindo front-end, back-end e banco de dados.
-                  Entre meus projetos, destaco o sistema de ponto com QR Code —
-                  desenvolvido com React, integração a API REST, autenticação
-                  segura e armazenamento em MongoDB — e um site de convite de
-                  casamento digital, com formulário conectado a banco de dados e
-                  painel de visualização em tempo real.
-                </p>
+            <p className="text-white text-[1rem]">
+              Minha trajetória prática inclui a entrega de soluções reais, como
+              uma plataforma completa para gestão de casamentos e um sistema de
+              ponto eletrônico seguro com leitura de QR Code. Esses projetos
+              solidificaram minha experiência com React.js, criação de APIs
+              RESTful e integração com bancos de dados SQL e NoSQL.
+            </p>
 
-                <p className="text-white text-[1rem]">
-                  Minha base técnica inclui HTML5, CSS3, JavaScript, TypeScript,
-                  React.js, Node.js, Express.js, Tailwind CSS, MongoDB e GitHub.
-                  Também possuo certificações pelo IFRS nas áreas de
-                  desenvolvimento web e metodologia ágil (Scrum), o que me ajuda
-                  a manter organização e colaboração eficaz em equipe.
-                </p>
+            <p className="text-white text-[1rem]">
+              Além do domínio do ecossistema JavaScript (incluindo TypeScript,
+              Next.js e Vue.js), expando minhas capacidades técnicas com Python
+              (FastAPI) e desenvolvimento móvel usando React Native. Minha
+              formação é complementada por certificações do IFRS e conhecimento
+              em metodologias ágeis como Scrum.
+            </p>
 
-                <p className="text-white text-[1rem]">
-                  Sou uma pessoa adaptável, comunicativa e focada em resultados.
-                  Tenho facilidade em aprender novas tecnologias e gosto de
-                  enfrentar desafios que me tirem da zona de conforto. Estou em
-                  busca de oportunidades para crescer profissionalmente e
-                  contribuir com soluções reais e impactantes no desenvolvimento
-                  web.
-                </p>
+            <p className="text-white text-[1rem]">
+              Mais do que código, valorizo a comunicação clara e o trabalho em
+              equipe. Sou movido pela curiosidade e pela vontade de resolver
+              problemas complexos, buscando sempre oportunidades onde possa
+              colaborar, aprender e crescer profissionalmente.
+            </p>
           </div>
         </AnimatedContent>
       </div>

@@ -11,8 +11,6 @@ export default function ParticleNetwork() {
     await loadExternalRemoveInteraction(engine);
   };
 
-  
-
   const particleOptions = {
     fpsLimit: 120,
     interactivity: {
@@ -27,16 +25,19 @@ export default function ParticleNetwork() {
         },
       },
       modes: {
-    remove: {
-      quantity: 4, 
-    },
-    push: {
-      quantity: 2,
-    },
-  },
+        remove: {
+          quantity: 4, 
+        },
+        push: {
+          quantity: 2, 
+        },
+      },
     },
     particles: {
-      number: { value: isMobile ? 40 : 80 },
+      number: { 
+        value: isMobile ? 40 : 80, 
+        limit: isMobile ? 60 : 120,
+      },
       color: { value: "#ffffff" },
       links: {
         enable: true,
