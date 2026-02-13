@@ -65,6 +65,12 @@ const Items = [
     url: "https://taskflow1708.netlify.app/login",
     id: 11,
   },
+  {
+    img: "/assets/LoveGuess.jpg",
+    title: "Jogo mobile LoveGuess",
+    url: "https://github.com/Alefk1708/LoveGuess/releases",
+    id: 12,
+  },
 ];
 
 export default Items;

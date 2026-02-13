@@ -69,6 +69,12 @@ const DEFAULT_ITEMS = [
     href: "https://taskflow1708.netlify.app/login",
     img: "/assets/TaskFlow.png",
   },
+  {
+    title: "Jogo mobile LoveGuess",
+    id: 12,
+    href: "https://github.com/Alefk1708/LoveGuess/releases",
+    img: "/assets/LoveGuess.jpg",
+  },
 ];
 
 const DRAG_BUFFER = 0;
