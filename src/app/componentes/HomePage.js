@@ -24,7 +24,7 @@ function HomePage() {
               src="/assets/Yoriichi-Perfil.png"
               alt="Foto de perfil"
               width={180} // ajuste conforme o tamanho que quer
-              height={180} 
+              height={180}
               className="lg:hidden rounded-full border-2 border-white shadow-[0_0_2rem_#ff0000]"
             />
           </div>
@@ -58,12 +58,12 @@ function HomePage() {
             </div>
           </AnimatedContent>
 
-          <div className="w-[100%] h-9 ">
+          <div className="w-[100%] h-9 justify-center items-center ">
             <Typewriter
               options={{
-                strings: [
-                  '<span class="text-white text-[1.5rem] flex flex-wrap gap-3 ">Sou <span class="text-[#9f0000] text-[1.5rem]">Desenvolvedor Fullstack</span></span>.',
-                ],
+                  strings: [
+                    '<span class="text-white text-[1.7rem]">Sou <span class="text-[#9f0000]">Desenvolvedor Fullstack.</span></span>',
+                  ],
                 autoStart: true,
                 loop: true,
               }}
@@ -72,9 +72,21 @@ function HomePage() {
         </div>
         <div className="flex gap-5">
           {[
-            { href: "mailto:kaiquealef42@gmail.com", src: "/assets/email.png", alt: "email logo" },
-            { href: "https://github.com/Alefk1708", src: "/assets/github.png", alt: "github logo" },
-            { href: "https://www.linkedin.com/in/kaique-alef-a86450207", src: "/assets/linkedin.png", alt: "linkedin logo" },
+            {
+              href: "mailto:kaiquealef42@gmail.com",
+              src: "/assets/email.png",
+              alt: "email logo",
+            },
+            {
+              href: "https://github.com/Alefk1708",
+              src: "/assets/github.png",
+              alt: "github logo",
+            },
+            {
+              href: "https://www.linkedin.com/in/kaique-alef-a86450207",
+              src: "/assets/linkedin.png",
+              alt: "linkedin logo",
+            },
           ].map((item, index) => (
             <AnimatedContent
               key={index}
@@ -150,11 +162,11 @@ function HomePage() {
               </div>
             </AnimatedContent>
 
-            <div className="w-[100%] h-9 ">
+            <div className="w-[100%] h-9">
               <Typewriter
                 options={{
                   strings: [
-                    '<span class="text-white text-[1.7rem] flex flex-wrap gap-3 ">Sou <span class="text-[#9f0000] text-[1.7rem]">Desenvolvedor Fullstack.</span></span>',
+                    '<span class="text-white text-[1.7rem]">Sou <span class="text-[#9f0000]">Desenvolvedor Fullstack.</span></span>',
                   ],
                   autoStart: true,
                   loop: true,
@@ -165,9 +177,21 @@ function HomePage() {
 
           <div className="flex gap-5 mt-4">
             {[
-              { href: "mailto:kaiquealef42@gmail.com", src: "/assets/email.png", alt: "email logo" },
-              { href: "https://github.com/Alefk1708", src: "/assets/github.png", alt: "github logo" },
-              { href: "https://www.linkedin.com/in/kaique-alef-a86450207", src: "/assets/linkedin.png", alt: "linkedin logo" },
+              {
+                href: "mailto:kaiquealef42@gmail.com",
+                src: "/assets/email.png",
+                alt: "email logo",
+              },
+              {
+                href: "https://github.com/Alefk1708",
+                src: "/assets/github.png",
+                alt: "github logo",
+              },
+              {
+                href: "https://www.linkedin.com/in/kaique-alef-a86450207",
+                src: "/assets/linkedin.png",
+                alt: "linkedin logo",
+              },
             ].map((item, index) => (
               <AnimatedContent
                 key={index}
@@ -183,7 +207,12 @@ function HomePage() {
               >
                 <div className="rounded-full w-10 p-1.5 border border-white">
                   <a href={item.href} target="_blank" rel="noopener noreferrer">
-                    <Image src={item.src} alt={item.alt} width={30} height={30} />
+                    <Image
+                      src={item.src}
+                      alt={item.alt}
+                      width={30}
+                      height={30}
+                    />
                   </a>
                 </div>
               </AnimatedContent>
@@ -227,8 +256,8 @@ function HomePage() {
             <Image
               src="/assets/Yoriichi-Perfil.png"
               alt="Foto de perfil"
-              width={320} 
-              height={320} 
+              width={320}
+              height={320}
               className="rounded-full border-4 border-white shadow-[0_0_2rem_#ff0000]"
             />
           </div>

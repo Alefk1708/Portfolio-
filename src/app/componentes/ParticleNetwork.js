@@ -53,7 +53,7 @@ export default function ParticleNetwork() {
 
   return (
     <Particles
-      className="absolute w-full h-full"
+      className="fixed w-full h-full -z-10"
       init={init}
       options={particleOptions}
     />
