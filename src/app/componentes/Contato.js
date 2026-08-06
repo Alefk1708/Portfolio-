@@ -1,343 +1,96 @@
-import AnimatedContent from "../animations/AnimatedContent";
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import Image from "next/image";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
-function Contato() {
-  const form = useRef();
+const contacts = [
+  { href: "mailto:kaiquealef42@gmail.com", label: "E-mail", Icon: Mail },
+  { href: "https://github.com/Alefk1708", label: "GitHub", Icon: Github },
+  {
+    href: "https://www.linkedin.com/in/kaique-alef-a86450207",
+    label: "LinkedIn",
+    Icon: Linkedin,
+  },
+];
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    emailjs
-      .sendForm(
+export default function Contato() {
+  const form = useRef(null);
+  const [status, setStatus] = useState("idle");
+
+  const sendEmail = async (event) => {
+    event.preventDefault();
+    setStatus("sending");
+
+    try {
+      await emailjs.sendForm(
         "service_yuoh8vr",
         "template_u2ec8zc",
         form.current,
         "HaFyE8vyQJMfsd31k"
-      )
-      .then(
-        () => {
-          alert("Mensagem enviada com sucesso!");
-          e.target.reset();
-        },
-        (err) => {
-          console.error(err);
-          alert("Erro ao enviar a mensagem.");
-        }
       );
+      form.current?.reset();
+      setStatus("success");
+    } catch (error) {
+      console.error("Erro ao enviar mensagem:", error);
+      setStatus("error");
+    }
   };
 
   return (
-    <div className="h-screen w-screen lg:mt-43">
-      {/* Pc */}
-      <div className="hidden lg:flex gap-55">
-        <div className="flex pl-24">
-          <div className="text-white w-[28rem] flex flex-col">
-            <AnimatedContent
-              distance={50}
-              direction="horizontal"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={0.4}
-            >
-              <div>
-                <h1 className="text-left text-3xl">CONTATO</h1>
-                <p className="mt-12">
-                  Estou interessado em oportunidades para colaborar em projetos
-                  inovadores e desafiantes. Se tiver alguma proposta, pergunta
-                  ou simplesmente quiser conversar, não hesite em me contatar
-                  através do formulário ao lado ou pelas minhas redes sociais.
-                </p>
-              </div>
-            </AnimatedContent>
+    <section className="section-page" aria-labelledby="contact-title">
+      <div className="section-container contact-container">
+        <div className="contact-grid">
+          <div className="contact-copy">
+            <span className="eyebrow">VAMOS CONVERSAR</span>
+            <h1 id="contact-title">Contato</h1>
+            <p>
+              Estou aberto a oportunidades, colaborações e projetos desafiadores.
+              Se quiser conversar sobre desenvolvimento, produto ou uma ideia nova,
+              é só me chamar.
+            </p>
 
-            <div className="flex gap-5 mt-7">
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={0.7}
-              >
-                <div className="rounded-full w-10 p-1.5 border border-white">
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=kaiquealef42@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/email.png"
-                      alt="email logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
-
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={1}
-              >
-                <div className="rounded-full w-10 p-1 border border-white ">
-                  <a href="https://github.com/Alefk1708" target="_blank">
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/github.png"
-                      alt="github logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
-
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={1.3}
-              >
-                <div className="rounded-full w-10 p-[7px] border border-white ">
-                  <a
-                    href="https://www.linkedin.com/in/kaique-alef-a86450207"
-                    target="_blank"
-                  >
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/linkedin.png"
-                      alt="linkedin logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
+            <div className="contact-links">
+              {contacts.map(({ href, label, Icon }) => (
+                <a
+                  href={href}
+                  key={label}
+                  target={href.startsWith("http") ? "_blank" : undefined}
+                  rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+                >
+                  <Icon size={19} aria-hidden="true" />
+                  <span>{label}</span>
+                </a>
+              ))}
             </div>
           </div>
-        </div>
 
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.4}
-        >
-          <div className="bg-[#ffffff13] w-[25rem] rounded-3xl">
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="flex flex-col justify-center items-center gap-6 p-9 text-white "
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Nome Completo"
-                className="border-2 border-[#9f0000] w-full h-8 rounded-md outline-none"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                className="border-2 border-[#9f0000] w-full h-8 rounded-md outline-none"
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Mensagem"
-                className="border-2 border-[#9f0000] w-full h-30 rounded-md outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-[#9f0000] w-65 h-9 rounded-3xl text-[1.3rem] cursor-pointer transition-discrete hover:"
-              >
-                Enviar mensagem
+          <div className="contact-form-panel panel">
+            <form ref={form} onSubmit={sendEmail}>
+              <label>
+                Nome completo
+                <input type="text" name="name" autoComplete="name" placeholder="Seu nome" required />
+              </label>
+              <label>
+                E-mail
+                <input type="email" name="email" autoComplete="email" placeholder="voce@exemplo.com" required />
+              </label>
+              <label>
+                Mensagem
+                <textarea name="message" rows={5} placeholder="Conte um pouco sobre sua ideia..." required />
+              </label>
+
+              <button className="button button-primary submit-button" type="submit" disabled={status === "sending"}>
+                <Send size={17} aria-hidden="true" />
+                {status === "sending" ? "Enviando..." : "Enviar mensagem"}
               </button>
-            </form>
-          </div>
-        </AnimatedContent>
-      </div>
 
-      {/* Mobile */}
-      <div className="lg:hidden overflow-y-auto h-full p-2 flex items-center justify-center flex-col gap-15">
-        <div className="flex flex-col p-5 mt-70">
-          <div className="text-white text-left flex flex-col">
-            <AnimatedContent
-              distance={50}
-              direction="horizontal"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={0.4}
-            >
-              <div>
-                <h1 className="text-left text-3xl">CONTATO</h1>
-                <p className="mt-12">
-                  Estou interessado em oportunidades para colaborar em projetos
-                  inovadores e desafiantes. Se tiver alguma proposta, pergunta
-                  ou simplesmente quiser conversar, não hesite em me contatar
-                  através do formulário ao lado ou pelas minhas redes sociais.
-                </p>
+              <div className="form-status" role="status" aria-live="polite">
+                {status === "success" && "Mensagem enviada com sucesso. Obrigado!"}
+                {status === "error" && "Não foi possível enviar agora. Tente novamente ou use o e-mail acima."}
               </div>
-            </AnimatedContent>
-
-            <div className="flex gap-5 mt-7">
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={0.7}
-              >
-                <div className="rounded-full w-10 p-1.5 border border-white">
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=kaiquealef42@gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/email.png"
-                      alt="email logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
-
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={1}
-              >
-                <div className="rounded-full w-10 p-1 border border-white ">
-                  <a href="https://github.com/Alefk1708" target="_blank">
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/github.png"
-                      alt="github logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
-
-              <AnimatedContent
-                distance={50}
-                direction="horizontal"
-                reverse={true}
-                duration={1.2}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.2}
-                delay={1.3}
-              >
-                <div className="rounded-full w-10 p-[7px] border border-white ">
-                  <a
-                    href="https://www.linkedin.com/in/kaique-alef-a86450207"
-                    target="_blank"
-                  >
-                    <Image
-                      width={40}
-                      height={40}
-                      src="/assets/linkedin.png"
-                      alt="linkedin logo"
-                    />
-                  </a>
-                </div>
-              </AnimatedContent>
-            </div>
-          </div>
-        </div>
-
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.4}
-        >
-          <div className="bg-[#ffffff13] rounded-3xl">
-            <form
-              ref={form}
-              onSubmit={sendEmail}
-              className="flex flex-col justify-center items-center gap-6 p-9 text-white "
-            >
-              <input
-                type="text"
-                name="name"
-                placeholder="Nome Completo"
-                className="border-2 border-[#9f0000] w-full h-8 rounded-md outline-none"
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                className="border-2 border-[#9f0000] w-full h-8 rounded-md outline-none"
-                required
-              />
-              <textarea
-                name="message"
-                placeholder="Mensagem"
-                className="border-2 border-[#9f0000] w-full h-30 rounded-md outline-none"
-                required
-              />
-              <button
-                type="submit"
-                className="bg-[#9f0000] w-65 h-9 rounded-3xl text-[1.3rem] cursor-pointer transition-discrete hover:"
-              >
-                Enviar mensagem
-              </button>
             </form>
           </div>
-        </AnimatedContent>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Contato;

@@ -1,14 +1,7 @@
-// app/client-wrapper.js
-'use client';
-
-import MemoizedParticles from "./componentes/MemoizedParticles";
-
-
-
 export default function ClientWrapper({ children }) {
   return (
     <>
-      <MemoizedParticles/>
+      <div className="ambient-background" aria-hidden="true" />
       {children}
     </>
   );

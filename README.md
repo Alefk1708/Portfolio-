@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio — Kaique Alef
 
-## Getting Started
+Portfólio pessoal desenvolvido com Next.js, com foco em apresentar projetos de
+desenvolvimento web, mobile, desktop, games e inteligência artificial.
 
-First, run the development server:
+## Destaques
+
+- 16 projetos públicos atuais organizados por categoria.
+- Stack técnica consolidada a partir dos projetos do GitHub.
+- Tema escuro e tema claro com preferência salva no navegador.
+- Layout responsivo para celular, tablet, notebook e desktop.
+- Scrollbars personalizadas nos dois temas.
+- Imagens de projetos otimizadas pelo `next/image` e carregadas sob demanda.
+- Fundo visual em CSS, sem canvas/loop permanente de partículas.
+- Suporte a `prefers-reduced-motion` e navegação por teclado.
+
+## Executar localmente
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Para validar a versão de produção:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Stack do portfólio
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js 15
+- React 19
+- CSS responsivo
+- Tailwind CSS 4 (pipeline do projeto)
+- Lucide React
+- EmailJS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Autor
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Kaique Alef](https://github.com/Alefk1708)

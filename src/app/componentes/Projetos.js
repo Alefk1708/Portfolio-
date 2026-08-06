@@ -1,190 +1,108 @@
-import { useState, useRef, useEffect } from "react";
-import items from "../data/Items";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Carousel from "../animations/Carousel";
-import AnimatedContent from "../animations/AnimatedContent";
+import { useMemo, useState } from "react";
 import Image from "next/image";
+import { ExternalLink, Github } from "lucide-react";
+import items from "../data/Items";
 
-const Projetos = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef(null);
-  const [containerWidth, setContainerWidth] = useState(0);
+const filters = ["Todos", "Full Stack", "Web", "Mobile", "Desktop", "Games", "IA & 3D"];
 
-  useEffect(() => {
-    const updateContainerWidth = () => {
-      if (containerRef.current) {
-        setContainerWidth(containerRef.current.offsetWidth);
-      }
-    };
+export default function Projetos() {
+  const [filter, setFilter] = useState("Todos");
 
-    updateContainerWidth();
-    window.addEventListener("resize", updateContainerWidth);
-
-    return () => {
-      window.removeEventListener("resize", updateContainerWidth);
-    };
-  }, []);
-
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % items.length);
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? items.length - 1 : prev - 1));
-  };
-
-  // Calcula offset para centralizar o item atual
-  const getTranslateX = () => {
-    const itemWidth = 15 * 16; // 240px
-    const gap = 2.5 * 16; // 40px
-    if (!containerWidth) return 0;
-
-    // Posicionamento inicial do primeiro item
-    const startOffset = (containerWidth - itemWidth) / 2;
-
-    // Deslocamento adicional pelos itens anteriores
-    const shift = currentIndex * (itemWidth + gap);
-
-    // Offset final para aplicar no translateX
-    return startOffset - shift;
-  };
+  const visibleProjects = useMemo(
+    () =>
+      filter === "Todos"
+        ? items
+        : items.filter((project) => project.category === filter),
+    [filter]
+  );
 
   return (
-    <div className="w-screen h-screen mt-15 text-center flex flex-col justify-center items-center overflow-hidden">
-      <AnimatedContent
-        distance={50}
-        direction="vertical"
-        reverse={true}
-        duration={1.2}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1}
-        threshold={0.2}
-        delay={0.4}
-      >
-        <div>
-          <h1 className="text-white text-3xl mt-6">PROJETOS</h1>
+    <section className="section-page" aria-labelledby="projects-title">
+      <div className="section-container projects-container">
+        <header className="section-heading">
+          <span className="eyebrow">PORTFÓLIO ATUAL</span>
+          <h1 id="projects-title">Projetos</h1>
+          <p>
+            Do front-end a jogos e IA 3D: os projetos públicos que mantenho hoje
+            no GitHub, reunidos em um só lugar.
+          </p>
+        </header>
+
+        <div className="filter-strip custom-scrollbar" aria-label="Filtrar projetos">
+          {filters.map((item) => (
+            <button
+              key={item}
+              type="button"
+              className={`filter-chip ${filter === item ? "is-active" : ""}`}
+              aria-pressed={filter === item}
+              onClick={() => setFilter(item)}
+            >
+              {item}
+            </button>
+          ))}
         </div>
-      </AnimatedContent>
 
-      <div className="hidden lg:flex items-center justify-center">
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={true}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.8}
-        >
-          <div>
-            <button
-              onClick={goToPrevious}
-              className="text-white p-2 border-2 border-white rounded-full cursor-pointer z-20"
-              aria-label="Projeto anterior"
-            >
-              <ChevronLeft />
-            </button>
-          </div>
-        </AnimatedContent>
-
-        <AnimatedContent
-          distance={50}
-          direction="vertical"
-          reverse={false}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={1.2}
-        >
-          <div
-            ref={containerRef}
-            className="overflow-hidden mx-3 flex items-center justify-start"
-            style={{ width: "60rem", height: "25rem" }}
-          >
-            <div
-              className="flex gap-10 transition-transform duration-300"
-              style={{ transform: `translateX(${getTranslateX()}px)` }}
-            >
-              {items.map((item, index) => (
-                <a
-                  href={item.url}
-                  key={item.id}
-                  target="_blank"
-                  className={`bg-[#47434379] w-[15rem] h-[17rem] rounded-3xl p-3 flex flex-col items-center flex-shrink-0 transition-all duration-300 ${
-                    currentIndex === index
-                      ? "scale-110 z-10 opacity-100 shadow-lg"
-                      : "scale-100 opacity-70"
-                  }`}
-                >
+        <div className="project-grid">
+          {visibleProjects.map((project) => (
+            <article className="project-card" key={project.id}>
+              <div className="project-visual">
+                {project.img ? (
                   <Image
-                    width={400}
-                    height={400}
-                    src={item.img}
-                    alt={item.title}
-                    className="w-[12rem] object-contain"
+                    src={project.img}
+                    alt={`Prévia do projeto ${project.title}`}
+                    fill
+                    sizes="(max-width: 720px) 92vw, (max-width: 1180px) 45vw, 360px"
+                    className="project-image"
                   />
-                  <h1 className="text-white text-2xl p-3">{item.title}</h1>
-                </a>
-              ))}
-            </div>
-          </div>
-        </AnimatedContent>
+                ) : (
+                  <div className="project-placeholder" aria-hidden="true">
+                    <span>{project.mark}</span>
+                  </div>
+                )}
+                <span className="project-category">{project.category}</span>
+              </div>
 
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={false}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.8}
-        >
-          <div>
-            <button
-              onClick={goToNext}
-              className="text-white p-2 border-2 border-white rounded-full cursor-pointer z-20"
-              aria-label="Próximo projeto"
-            >
-              <ChevronRight />
-            </button>
-          </div>
-        </AnimatedContent>
-      </div>
-      {/* Mobile version */}
+              <div className="project-body">
+                <h2>{project.title}</h2>
+                <p>{project.description}</p>
 
-      <div className="lg:hidden ">
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={true}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.8}
-        >
-          <div style={{ height: "400px", position: "relative" }}>
-            <Carousel
-              baseWidth={300}
-              autoplay={true}
-              autoplayDelay={3000}
-              pauseOnHover={true}
-              loop={true}
-              round={false}
-            />
-          </div>
-        </AnimatedContent>
+                <div className="project-tags" aria-label="Tecnologias">
+                  {project.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+
+                <div className="project-actions">
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link project-link-primary"
+                    >
+                      <ExternalLink size={16} aria-hidden="true" />
+                      {project.demoLabel || "Ver projeto"}
+                    </a>
+                  )}
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
+                    <Github size={16} aria-hidden="true" />
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <p className="section-note">
+          {visibleProjects.length} {visibleProjects.length === 1 ? "projeto" : "projetos"} nesta categoria
+        </p>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default Projetos;
+}

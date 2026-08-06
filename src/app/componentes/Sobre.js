@@ -1,150 +1,59 @@
-import AnimatedContent from "../animations/AnimatedContent";
+import { Bot, Code2, Gamepad2, MonitorSmartphone } from "lucide-react";
 
-function Sobre() {
+const focusAreas = [
+  { Icon: Code2, title: "Full Stack", text: "Next.js, FastAPI, ASP.NET e bancos SQL/NoSQL" },
+  { Icon: MonitorSmartphone, title: "Web & Mobile", text: "React, Vue, React Native, Expo e interfaces responsivas" },
+  { Icon: Gamepad2, title: "Games", text: "Godot 4, GDScript e multiplayer com Photon Fusion" },
+  { Icon: Bot, title: "IA & 3D", text: "Gemini, Hunyuan3D, PyTorch e otimização de GPU" },
+];
+
+export default function Sobre() {
   return (
-    <div className=" w-screen h-screen flex justify-center items-center">
-      <AnimatedContent
-        distance={50}
-        direction="vertical"
-        reverse={false}
-        duration={1.2}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1}
-        threshold={0.2}
-        delay={0.3}
-      >
-        <div className="flex items-center justify-center">
-          <div className="hidden lg:flex flex-col gap-6 p-14 absolute w-[59rem] h-[25rem] mt-8 bg-[#ffffff13] rounded-4xl scroll-mb-6 overflow-y-auto scrollbar scrollbar-thumb-rounded-full scrollbar-thumb-gray-500 scrollbar-track-transparent">
-            <AnimatedContent
-              distance={50}
-              direction="vertical"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={0.6}
-            >
-              <div>
-                <h1 className="text-white text-3xl">SOBRE MIM</h1>
-              </div>
-            </AnimatedContent>
+    <section className="section-page" aria-labelledby="about-title">
+      <div className="section-container about-container">
+        <header className="section-heading">
+          <span className="eyebrow">SOBRE MIM</span>
+          <h1 id="about-title">Construindo além do front-end</h1>
+          <p>
+            Sou Kaique Alef, desenvolvedor Full Stack de Goiânia. Gosto de
+            transformar problemas reais em produtos que funcionam de ponta a ponta.
+          </p>
+        </header>
 
-            <AnimatedContent
-              distance={50}
-              direction="horizontal"
-              reverse={true}
-              duration={1.2}
-              initialOpacity={0}
-              animateOpacity={true}
-              scale={1}
-              threshold={0.2}
-              delay={1}
-            >
-              <div className="space-y-5">
-                <p className="text-white text-[1rem]">
-                  Olá! Sou Kaique Alef, um Desenvolvedor Full Stack de 20 anos,
-                  apaixonado por transformar ideias em código. Com base em
-                  Goiânia, atuo no desenvolvimento de aplicações Web e Mobile,
-                  sempre buscando unir interfaces intuitivas a um back-end
-                  robusto e eficiente.
-                </p>
+        <div className="about-layout">
+          <div className="about-copy panel">
+            <p>
+              Minha base começou no desenvolvimento web com JavaScript, React,
+              Next.js e Vue.js, evoluindo para APIs e back-ends em Python/FastAPI
+              e C#/.NET, autenticação, bancos relacionais e NoSQL e comunicação em
+              tempo real.
+            </p>
+            <p>
+              Hoje também desenvolvo para mobile com React Native/Expo, aplicações
+              Windows em .NET e jogos com Godot. Em projetos recentes, venho
+              trabalhando com IA aplicada, integração com Gemini e geração 3D com
+              Hunyuan3D, incluindo otimizações para hardware com pouca VRAM.
+            </p>
+            <p>
+              Valorizo código simples de manter, interfaces intuitivas e a prática
+              de aprender construindo. Meu GitHub reúne desde utilitários pequenos
+              até sistemas full-stack e projetos de maior escopo.
+            </p>
+          </div>
 
-                <p className="text-white text-[1rem]">
-                  Minha trajetória prática inclui a entrega de soluções reais,
-                  como uma plataforma completa para gestão de casamentos e um
-                  sistema de ponto eletrônico seguro com leitura de QR Code.
-                  Esses projetos solidificaram minha experiência com React.js,
-                  criação de APIs RESTful e integração com bancos de dados SQL e
-                  NoSQL.
-                </p>
-
-                <p className="text-white text-[1rem]">
-                  Além do domínio do ecossistema JavaScript (incluindo
-                  TypeScript, Next.js e Vue.js), expando minhas capacidades
-                  técnicas com Python (FastAPI) e desenvolvimento móvel usando
-                  React Native. Minha formação é complementada por certificações
-                  do IFRS e conhecimento em metodologias ágeis como Scrum.
-                </p>
-
-                <p className="text-white text-[1rem]">
-                  Mais do que código, valorizo a comunicação clara e o trabalho
-                  em equipe. Sou movido pela curiosidade e pela vontade de
-                  resolver problemas complexos, buscando sempre oportunidades
-                  onde possa colaborar, aprender e crescer profissionalmente.
-                </p>
-              </div>
-            </AnimatedContent>
+          <div className="focus-grid" aria-label="Áreas de atuação">
+            {focusAreas.map(({ Icon, title, text }) => (
+              <article className="focus-card" key={title}>
+                <span className="focus-icon"><Icon size={20} aria-hidden="true" /></span>
+                <div>
+                  <h2>{title}</h2>
+                  <p>{text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
-      </AnimatedContent>
-
-      <div className="lg:hidden flex flex-col gap-4 bg-[#ffffff13] p-6 rounded-4xl scroll-mb-6 overflow-y-auto w-[93%] h-[80%] mt-17 ">
-        <AnimatedContent
-          distance={50}
-          direction="vertical"
-          reverse={true}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={0.6}
-        >
-          <div>
-            <h1 className="text-white text-3xl">SOBRE MIM</h1>
-          </div>
-        </AnimatedContent>
-
-        <AnimatedContent
-          distance={50}
-          direction="horizontal"
-          reverse={true}
-          duration={1.2}
-          initialOpacity={0}
-          animateOpacity={true}
-          scale={1}
-          threshold={0.2}
-          delay={1}
-        >
-          <div className="space-y-5">
-            <p className="text-white text-[1rem]">
-              Olá! Sou Kaique Alef, um Desenvolvedor Full Stack de 20 anos,
-              apaixonado por transformar ideias em código. Com base em Goiânia,
-              atuo no desenvolvimento de aplicações Web e Mobile, sempre
-              buscando unir interfaces intuitivas a um back-end robusto e
-              eficiente.
-            </p>
-
-            <p className="text-white text-[1rem]">
-              Minha trajetória prática inclui a entrega de soluções reais, como
-              uma plataforma completa para gestão de casamentos e um sistema de
-              ponto eletrônico seguro com leitura de QR Code. Esses projetos
-              solidificaram minha experiência com React.js, criação de APIs
-              RESTful e integração com bancos de dados SQL e NoSQL.
-            </p>
-
-            <p className="text-white text-[1rem]">
-              Além do domínio do ecossistema JavaScript (incluindo TypeScript,
-              Next.js e Vue.js), expando minhas capacidades técnicas com Python
-              (FastAPI) e desenvolvimento móvel usando React Native. Minha
-              formação é complementada por certificações do IFRS e conhecimento
-              em metodologias ágeis como Scrum.
-            </p>
-
-            <p className="text-white text-[1rem]">
-              Mais do que código, valorizo a comunicação clara e o trabalho em
-              equipe. Sou movido pela curiosidade e pela vontade de resolver
-              problemas complexos, buscando sempre oportunidades onde possa
-              colaborar, aprender e crescer profissionalmente.
-            </p>
-          </div>
-        </AnimatedContent>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Sobre;

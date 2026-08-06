@@ -1,149 +1,113 @@
-import AnimatedContent from "../animations/AnimatedContent";
-import Image from "next/image";
+const skillGroups = [
+  {
+    title: "Linguagens",
+    description: "Base usada nos projetos web, APIs, desktop e games.",
+    skills: [
+      ["JavaScript", "JS"],
+      ["TypeScript", "TS"],
+      ["Python", "PY"],
+      ["C#", "C#"],
+      ["GDScript", "GD"],
+      ["HTML5", "<>"],
+      ["CSS3", "CSS"],
+      ["SQL", "SQL"],
+    ],
+  },
+  {
+    title: "Front-end & Mobile",
+    description: "Interfaces responsivas para web e aplicativos.",
+    skills: [
+      ["React", "RE"],
+      ["Next.js", "NX"],
+      ["Vue.js", "VU"],
+      ["Tailwind CSS", "TW"],
+      ["React Native", "RN"],
+      ["Expo", "EX"],
+      ["NativeWind", "NW"],
+    ],
+  },
+  {
+    title: "Back-end & Dados",
+    description: "APIs, autenticação, tempo real e persistência.",
+    skills: [
+      ["Node.js", "ND"],
+      ["Express.js", "ES"],
+      ["FastAPI", "FA"],
+      ["ASP.NET Core", ".N"],
+      ["REST APIs", "API"],
+      ["WebSockets", "WS"],
+      ["JWT & 2FA", "JWT"],
+      ["PostgreSQL", "PG"],
+      ["SQL Server", "SQL"],
+      ["MongoDB", "MG"],
+      ["SQLAlchemy", "SA"],
+      ["Entity Framework", "EF"],
+    ],
+  },
+  {
+    title: "Games, IA & 3D",
+    description: "Tecnologias que aparecem nos projetos mais recentes.",
+    skills: [
+      ["Godot 4", "GO"],
+      ["Photon Fusion", "PH"],
+      ["Google Gemini", "AI"],
+      ["ML.NET", "ML"],
+      ["Hunyuan3D 2.1", "3D"],
+      ["PyTorch / Diffusers", "PT"],
+      ["Hugging Face", "HF"],
+      ["Modly", "MO"],
+    ],
+  },
+  {
+    title: "Ferramentas & Plataforma",
+    description: "Ferramentas de desenvolvimento, integração e entrega.",
+    skills: [
+      ["Git", "GT"],
+      ["GitHub", "GH"],
+      ["Swagger / OpenAPI", "OA"],
+      ["Cloudinary", "CL"],
+      ["WPF / Windows", "WP"],
+      ["CUDA / GPU Offload", "CU"],
+    ],
+  },
+];
 
-function Skills() {
-  // Lista atualizada com todas as habilidades do seu currículo
-  const skills = [
-    // --- Front-end ---
-    { src: "/assets/HTML5.png", label: "HTML", width: "w-16" },
-    { src: "/assets/CSS3.png", label: "CSS", width: "w-16" },
-    { src: "/assets/JavaScript.png", label: "JAVASCRIPT", width: "w-16" },
-    { src: "/assets/TypeScript.png", label: "TYPESCRIPT", width: "w-16" }, // Adicionado
-    { src: "/assets/React.png", label: "REACT", width: "w-16" },
-    { src: "/assets/Next.png", label: "NEXT.JS", width: "w-16" }, // Adicionado
-    { src: "/assets/Vue.png", label: "VUE.JS", width: "w-16" },   // Adicionado
-    { src: "/assets/Tailwindcss.png", label: "TAILWIND", width: "w-16" },
-
-    // --- Mobile ---
-    { src: "/assets/ReactNative.png", label: "REACT NATIVE", width: "w-16" }, // Adicionado
-    { src: "/assets/NativeWind.png", label: "NATIVEWIND", width: "w-16" },   // Adicionado
-
-    // --- Back-end & Python ---
-    { src: "/assets/Node.png", label: "NODE.JS", width: "w-16" },
-    { src: "/assets/Express.png", label: "EXPRESS.JS", width: "w-16" },
-    { src: "/assets/Python.png", label: "PYTHON", width: "w-16" },
-    { src: "/assets/FastAPI.png", label: "FASTAPI", width: "w-16" }, // Adicionado
-    { src: "/assets/Api-rest.png", label: "API REST", width: "w-16" },
-    { src: "/assets/JWT.png", label: "JWT AUTH", width: "w-16" },    // Adicionado
-
-    // --- Banco de Dados & Ferramentas ---
-    { src: "/assets/SQL.png", label: "SQL", width: "w-16" },         // Adicionado
-    { src: "/assets/MongoDB.png", label: "MONGODB", width: "w-16" },  // Adicionado
-    { src: "/assets/Git.png", label: "GIT", width: "w-16" },          // Adicionado
-    { src: "/assets/GitHub.png", label: "GITHUB", width: "w-16" },    // Adicionado
-  ];
+export default function Skills() {
+  const totalSkills = skillGroups.reduce((total, group) => total + group.skills.length, 0);
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center mt-20 overflow-x-hidden">
-      {/* Título Principal */}
-      <AnimatedContent
-        distance={50}
-        direction="vertical"
-        reverse={true}
-        duration={1.2}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1}
-        threshold={0.2}
-        delay={0.4}
-      >
-        <div>
-          <h1 className="hidden lg:flex text-white text-center text-3xl mb-23 mt-[2vh]">
-            SKILLS
-          </h1>
-        </div>
-      </AnimatedContent>
+    <section className="section-page" aria-labelledby="skills-title">
+      <div className="section-container skills-container">
+        <header className="section-heading">
+          <span className="eyebrow">STACK EM USO</span>
+          <h1 id="skills-title">Skills & ferramentas</h1>
+          <p>
+            Stack consolidada a partir dos projetos atuais — web, mobile,
+            desktop, games, dados e inteligência artificial.
+          </p>
+        </header>
 
-      {/* PC / Desktop View - Usando Grid Ajustado */}
-      {/* Ajustei o grid-cols para 4 colunas para acomodar melhor a quantidade maior de itens */}
-      <div className="hidden lg:grid grid-cols-4 gap-x-16 gap-y-12">
-        {skills.map((skill, index) => (
-          <AnimatedContent
-            key={index}
-            distance={50}
-            direction="vertical"
-            reverse={true}
-            duration={1.2}
-            initialOpacity={0}
-            animateOpacity={true}
-            scale={1}
-            threshold={0.2}
-            delay={0.2 + index * 0.1} // Delay ajustado para ser mais rápido com muitos itens
-          >
-            <div className="flex items-center justify-center relative w-[16rem]">
-              <Image
-                width={400}
-                height={400}
-                className={`${skill.width} h-16 absolute left-0 z-10`}
-                src={skill.src}
-                alt={`${skill.label} icon`}
-              />
-
-              <div className="bg-[#ffffff13] h-[3rem] w-[12rem] pl-8 flex items-center justify-center rounded-3xl ml-6">
-                <h1 className="text-white text-xl text-center font-bold tracking-wider">
-                  {skill.label}
-                </h1>
+        <div className="skill-groups">
+          {skillGroups.map((group) => (
+            <article className="skill-group" key={group.title}>
+              <div className="skill-group-heading">
+                <h2>{group.title}</h2>
+                <p>{group.description}</p>
               </div>
-            </div>
-          </AnimatedContent>
-        ))}
-      </div>
-
-      {/* Título Mobile */}
-      <AnimatedContent
-        distance={50}
-        direction="vertical"
-        reverse={true}
-        duration={1.2}
-        initialOpacity={0}
-        animateOpacity={true}
-        scale={1}
-        threshold={0.2}
-        delay={0.4}
-      >
-        <div>
-          <h1 className="lg:hidden text-white text-center text-3xl mt-17">
-            SKILLS
-          </h1>
-        </div>
-      </AnimatedContent>
-
-      {/* Mobile View */}
-      <div className="lg:hidden overflow-scroll scroll-mb-10 h-[70vh] w-[18rem] mt-7 mb-12 px-4">
-        <div className="flex flex-col gap-6 pb-20">
-            {skills.map((skill, index) => (
-             <AnimatedContent
-                key={index}
-                distance={30}
-                direction="horizontal"
-                reverse={true}
-                duration={0.8}
-                initialOpacity={0}
-                animateOpacity={true}
-                scale={1}
-                threshold={0.1}
-                delay={index * 0.1} 
-              >
-              <div className="flex items-center h-16 relative">
-                <Image
-                  width={400}
-                  height={400}
-                  className="w-14 h-14 absolute left-0 z-10"
-                  src={skill.src}
-                  alt={`${skill.label} icon`}
-                />
-                <div className="bg-[#ffffff13] h-12 flex-1 pl-10 rounded-3xl ml-6 flex items-center justify-center">
-                  <h1 className="text-white text-lg font-semibold text-center">
-                    {skill.label}
-                  </h1>
-                </div>
+              <div className="skill-list">
+                {group.skills.map(([label, short]) => (
+                  <div className="skill-pill" key={label}>
+                    <span className="skill-mark" aria-hidden="true">{short}</span>
+                    <span>{label}</span>
+                  </div>
+                ))}
               </div>
-              </AnimatedContent>
-            ))}
+            </article>
+          ))}
         </div>
+
+        <p className="section-note">{totalSkills} tecnologias e ferramentas organizadas por área</p>
       </div>
-    </div>
+    </section>
   );
 }
-
-export default Skills;
