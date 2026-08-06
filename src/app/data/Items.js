@@ -4,7 +4,7 @@ const Items = [
     title: "Metropolis in Ruins",
     description:
       "Jogo de estratégia econômica para PC e Android, com partidas locais, single-player e multiplayer online.",
-    img: null,
+    img: "/assets/MetropolisInRuins.png",
     mark: "MR",
     category: "Games",
     tags: ["Godot 4.7", "GDScript", "Photon Fusion", "Android"],
@@ -26,7 +26,7 @@ const Items = [
     title: "Nexus Network Binder",
     description:
       "Aplicativo Windows para direcionar processos por interfaces de rede específicas, com foco em controle e diagnóstico de conexão.",
-    img: null,
+    img: "/assets/NexusNetworkBinder.png",
     mark: "NX",
     category: "Desktop",
     tags: ["C#", ".NET 8", "WPF", "Windows"],
@@ -48,7 +48,7 @@ const Items = [
     title: "Workflow Hospitalar",
     description:
       "Plataforma hospitalar full-stack com gestão de pacientes, chat em tempo real e assistente de IA com function calling.",
-    img: null,
+    img: "/assets/WorkflowHospitalar.png",
     mark: "WH",
     category: "Full Stack",
     tags: ["Next.js", "FastAPI", "WebSockets", "Gemini"],
